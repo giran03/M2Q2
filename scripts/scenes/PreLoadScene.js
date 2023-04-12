@@ -27,6 +27,9 @@ class PreLoadScene extends Phaser.Scene
         this.load.spritesheet('normalTako', './assets/misc/Takodachi.png', { frameWidth: 42, frameHeight: 42 });
         this.load.spritesheet('hungryTako', './assets/misc/Hungry_Takodachi.png', { frameWidth: 42, frameHeight: 42 });
         
+        this.load.spritesheet('spaceKey', './assets/gui/SPACE.png', { frameWidth: 67, frameHeight: 16 });
+        this.load.spritesheet('letterKeys', './assets/gui/letter_keys.png', { frameWidth: 17, frameHeight: 16 });
+        this.load.spritesheet('arrowKeys', './assets/gui/arrow_keys.png', { frameWidth: 17, frameHeight: 16 });
         this.load.spritesheet('uiButtonLarge', './assets/gui/buttonsLarge.png', { frameWidth: 48, frameHeight: 16 });
 
         this.load.image('tentacle', './assets/misc/playerProjectile.png');
@@ -68,6 +71,38 @@ class PreLoadScene extends Phaser.Scene
             key: 'TakoHungry',
             frames: this.anims.generateFrameNumbers('hungryTako', { start: 0, end: 2 }),
             frameRate: 6,
+            repeat: -1
+        })
+
+        // BUTTON ANIMATION
+        this.anims.create({
+            key: 'animL',
+            frames: this.anims.generateFrameNumbers('arrowKeys', { start: 0, end: 1 }),
+            frameRate: 1,
+            repeat: -1
+        })
+        this.anims.create({
+            key: 'animR',
+            frames: this.anims.generateFrameNumbers('arrowKeys', { start: 4, end: 5 }),
+            frameRate: 4,
+            repeat: -1
+        })
+        this.anims.create({
+            key: 'animLetterL',
+            frames: this.anims.generateFrameNumbers('letterKeys', { start: 2, end: 3 }),
+            frameRate: 1,
+            repeat: -1
+        })
+        this.anims.create({
+            key: 'animLetterR',
+            frames: this.anims.generateFrameNumbers('letterKeys', { start: 4, end: 5 }),
+            frameRate: 4,
+            repeat: -1
+        })
+        this.anims.create({
+            key: 'animSpacebar',
+            frames: this.anims.generateFrameNumbers('spaceKey', { start: 0, end: 1 }),
+            frameRate: 4,
             repeat: -1
         })
         console.log("Loading Scene Done!")

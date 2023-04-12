@@ -47,7 +47,30 @@ class MainMenuScene extends Phaser.Scene
             }
         })
         
-        // the 'this.tweens.' are used for animation
+        // ⚠️ 'this.tweens.' are used for animations ⚠️
+
+        // CONTROLS INFO
+        let controlsText = this.add.text(screenCenterX*.25, screenCenterY*.15, "C O N T R O L S  " ,
+        { fill: '#fff' , fontSize: '20px', fontStyle: 'italic' , fontFamily: 'impact'}).setShadow(2, 2, '#000', 5, true, true).setOrigin(.5).setVisible(false)
+
+        let leftText = this.add.text(screenCenterX*.6, screenCenterY*.24, "L E F T  " ,
+        { fill: '#fff' , fontSize: '20px', fontStyle: 'italic' , fontFamily: 'impact'}).setShadow(2, 2, '#000', 5, true, true).setOrigin(.5).setVisible(false)
+        let letterA = this.add.sprite(screenCenterX*.35, screenCenterY*.25, 'letterKeys').setScale(3).setOrigin(.5).setVisible(false)
+        letterA.anims.play('animLetterL', true)
+        let arrowL = this.add.sprite(screenCenterX*.15, screenCenterY*.25, 'arrowKeys').setScale(3).setOrigin(.5).setVisible(false)
+        arrowL.anims.play('animL', true)
+        
+        let rightText = this.add.text(screenCenterX*.64, screenCenterY*.345, "R I G H T  " ,
+        { fill: '#fff' , fontSize: '20px', fontStyle: 'italic' , fontFamily: 'impact'}).setShadow(2, 2, '#000', 5, true, true).setOrigin(.5).setVisible(false)
+        let letterD = this.add.sprite(screenCenterX*.35, screenCenterY*.355, 'letterKeys').setScale(3).setOrigin(.5).setVisible(false)
+        letterD.anims.play('animLetterR', true)
+        let arrowR = this.add.sprite(screenCenterX*.15, screenCenterY*.355, 'arrowKeys').setScale(3).setOrigin(.5).setVisible(false)
+        arrowR.anims.play('animR', true)
+
+        let spacebarText = this.add.text(screenCenterX*.65, screenCenterY*.455, "S H O O T  " ,
+        { fill: '#fff' , fontSize: '20px', fontStyle: 'italic' , fontFamily: 'impact'}).setShadow(2, 2, '#000', 5, true, true).setOrigin(.5).setVisible(false)
+        let spaceBar = this.add.sprite(screenCenterX*.25, screenCenterY*.46, 'spaceKey').setScale(1.6).setOrigin(.5).setVisible(false)
+        spaceBar.anims.play('animSpacebar', true)
 
         // 🌀 BUTTONS 🌀
         this.playBtn = this.add.sprite(screenCenterX + 1000, screenCenterY*1.2, 'uiButtonLarge').setOrigin(.5).setInteractive().setScale(3)
@@ -93,6 +116,16 @@ class MainMenuScene extends Phaser.Scene
                 playText.setVisible(true)
                 creditsText.setVisible(true)
                 quitText.setVisible(true)
+ 
+                controlsText.setVisible(true)
+                leftText.setVisible(true)
+                letterA.setVisible(true)
+                arrowL.setVisible(true)
+                rightText.setVisible(true)
+                letterD.setVisible(true)
+                arrowR.setVisible(true)
+                spacebarText.setVisible(true)
+                spaceBar.setVisible(true)
             }
         })
 
