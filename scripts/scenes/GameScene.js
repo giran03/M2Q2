@@ -41,11 +41,6 @@ class GameScene extends Phaser.Scene
     }
     
     create() {
-        this.sound.stopAll();
-        this.sound.play('bgm', {
-            loop: true,
-            volume: .8
-        })
         this.timeRemaining = 90
         this.timeSurvived = 0
         this.scoreText = 0
